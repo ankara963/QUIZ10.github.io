@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QUIZ 10 HTML/CSS/JAVASCRIPT</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+
+  body {
+    background-image: url(background.png);
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+
+
+    .banner {
+      width: 100%;
+      height: 100vh;
+
+    }
+
+    .container {
+      position: absolute;
+    }
+    .container1 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .female-character {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      width: 100%;
+    }
+
+    .headline {
+      position: absolute;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: 100%;
+    }
+
+    .headline1 {
+      position: absolute;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+      width: 100px;
+      height: 100px;
+    }
+
+
+    #headline2 {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    .subheadline {
+      position: absolute;
+      right: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .container2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.5s ease;
+    }
+
+    .button1 {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.5s ease;
+    }
+
+    #logo{
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      transition: transform 0.5s ease;
+    }
+
+
+
+    .container3 {
+      display: flex;
+
+      align-items: center;
+    }
+
+    #replayBtn {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <main>
+  <div class="banner">
+
+      <div>
+    <img src="female.png" class="female-character" alt="Female Character">
+  </div>
+  <div class="container1">
+    <img src="logo.png" id="logo" alt="Logo">
+    </div>
+    <div>
+    <img src="headline1.png" class="headline" id="headline1" alt="Headline 1">
+  </div>
+  <div>
+    <img src="headline2.png" class="headline" id="headline2" alt="Headline 2">
+  </div>
+  <div>
+    <img src="subheadline.png" id="subheadline" class="subheadline" alt="Subheadline">
+  </div>
+    <div class="container2">
+      <img src="learnmore.png" id="learnMoreBtn" class="button" alt="Learn More Button">
+      </div>
+        <br>
+        <br>
+        <br>
+    <div class="container3">
+    <img src="replay.png" id="replayBtn" class="button1" alt="Replay Button">
+  </div>
+  </div>
+  </main>
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const femaleCharacter = document.querySelector('.female-character');
+      const headline1 = document.getElementById('headline1');
+      const headline2 = document.getElementById('headline2');
+      const subheadline = document.getElementById('subheadline');
+      const learnMoreBtn = document.getElementById('learnMoreBtn');
+      const logo = document.getElementById('logo');
+      const replayBtn = document.getElementById('replayBtn');
+
+      
+      femaleCharacter.style.opacity = 0;
+      headline1.style.transform = 'translateX(-100%)';
+      headline2.style.transform = 'translateX(100%)';
+      headline2.style.opacity = 0;
+      subheadline.style.opacity = 0;
+      learnMoreBtn.style.opacity = 0;
+      logo.style.transform = 'translateX(100%)';
+      replayBtn.style.opacity = 0;
+
+      
+      setTimeout(function() {
+        femaleCharacter.style.opacity = 1;
+      }, 500);
+
+      setTimeout(function() {
+        headline1.style.transform = 'translateX(0)';
+      }, 1000);
+
+      setTimeout(function() {
+        femaleCharacter.style.opacity = 0;
+        headline1.style.transform = 'translateX(-100%)';
+      }, 3000);
+
+      setTimeout(function() {
+        headline2.style.transform = 'translateX(0)';
+        headline2.style.opacity = 1;
+      }, 3500);
+
+      setTimeout(function() {
+        subheadline.style.opacity = 1;
+        learnMoreBtn.style.opacity = 1;
+      }, 5000);
+
+      setTimeout(function() {
+        logo.style.transform = 'translateX(0)';
+      }, 7000);
+
+      setTimeout(function() {
+        replayBtn.style.opacity = 1;
+      }, 9000);
+    });
+  </script>
+</body>
+</html>
